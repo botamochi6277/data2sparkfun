@@ -35,6 +35,7 @@
               , parseFloat(row.val2)
             ]);
           if (i > 50) {
+            // cut data by 50
             //            http://chaika.hatenablog.com/entry/2015/04/02/131506
             return false;
           }
@@ -42,7 +43,7 @@
         //        var chart = new google.visualization.LineChart($('#chart').get(0));
         var chart = new google.visualization.ScatterChart($('#chart').get(0));
         chart.draw(data, {
-          title: 'Melos'
+          title: 'MyPlot'
         });
       });
       var date_obj = new Date();
@@ -62,9 +63,6 @@
     // call drawChart once google charts is loaded
     google.setOnLoadCallback(drawChart);
     setInterval(drawChart, 100);
-    //    for (;;) {
-    //      setTimeout("google.setOnLoadCallback(drawChart)", 300);
-    //    }
   </script>
 </head>
 
